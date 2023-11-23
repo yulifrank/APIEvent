@@ -11,21 +11,25 @@ namespace myFirstApiYaelFrank.Controllers
 
     public class EventsController : ControllerBase
     {
-        static Data context = new Data();
+        private readonly IDataContext _context;
 
+        public EventsController(IDataContext context)
+        {
+            _context = context;
+        }
         [HttpGet]
         public ActionResult Get()
         {
-            return Ok(context.EventList);
+            return Ok(_context.EventList);
         }
 
         [HttpGet("{id}")]
         public ActionResult Get(int id)
         {
-            if (id >= context.EventList.Count)
+            if (id >= _context.EventList.Count)
                 return NotFound();
 
-            return Ok(context.EventList[id].Title);
+            return Ok(_context.EventList[id].Title);
         }
 
         [HttpPost]
@@ -34,7 +38,7 @@ namespace myFirstApiYaelFrank.Controllers
             if (string.IsNullOrEmpty(value.Title) || value.Start == null)
                 return BadRequest();
 
-            context.EventList.Add(new Event { Id = Event.index, Title = value.Title, Start = value.Start });
+            _context.EventList.Add(new Event { Id = Event.index, Title = value.Title, Start = value.Start });
 
             return Ok();
         }
@@ -42,13 +46,13 @@ namespace myFirstApiYaelFrank.Controllers
         [HttpPut("{id}")]
         public ActionResult Put(int id, [FromBody] Event value)
         {
-            if (id >= context.EventList.Count)
+            if (id >= _context.EventList.Count)
                 return NotFound();
 
             if (string.IsNullOrEmpty(value.Title) || value.Start == null)
                 return BadRequest();
 
-            var e = context.EventList.Find(e => e.Id == id);
+            var e = _context.EventList.Find(e => e.Id == id);
             e.Title = value.Title;
             e.Start = value.Start;
 
@@ -58,11 +62,11 @@ namespace myFirstApiYaelFrank.Controllers
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {
-            if (id >= context.EventList.Count)
+            if (id >= _context.EventList.Count)
                 return NotFound();
 
-            var e = context.EventList.Find(e => e.Id == id);
-            context.EventList.Remove(e);
+            var e = _context.EventList.Find(e => e.Id == id);
+            _context.EventList.Remove(e);
 
             return Ok();
         }

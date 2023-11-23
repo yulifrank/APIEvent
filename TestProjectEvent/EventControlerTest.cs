@@ -11,41 +11,34 @@ namespace TestProjectEvent
 {
     public class EventControlerTest
     {
-        [Fact]
+        private readonly EventsController _eventsController;
 
+        public EventControlerTest()
+        {
+            var context = new DataContextFake();
+            _eventsController = new EventsController(context);
+        }
+        [Fact]
         public void Get_ReturnOk()
         {
-
-            var controller = new EventsController();
-            var result = controller.Get();
-
+            var result = _eventsController.Get();
             Assert.IsType<OkObjectResult>(result);
         }
-
         [Fact]
         public void GetById_ReturnNotFound()
         {
-
             int id = 5;
-
-
-            var controller = new EventsController();
-            var result = controller.Get(id);
-
+            var result = _eventsController.Get(id);
             Assert.IsType<NotFoundResult>(result);
         }
-
-
 
         [Fact]
         public void Post_ReturnBadRequest()
         {
             // Arrange
-            var controller = new EventsController();
             var invalidEvent = new Event(); // Create an invalid event object here
-
             // Act
-            var result = controller.Post(invalidEvent);
+            var result = _eventsController.Post(invalidEvent);
             // Assert
             Assert.IsType<BadRequestResult>(result);
         }
@@ -54,12 +47,11 @@ namespace TestProjectEvent
         public void Put_ReturnInternalServerError()
         {
             // Arrange
-            var controller = new EventsController();
             var invalidId = -1; // Provide an invalid ID here
             var updatedEvent = new Event(); // Provide a valid event object here
 
             // Act
-            var result = controller.Put(invalidId, updatedEvent);
+            var result = _eventsController.Put(invalidId, updatedEvent);
 
             // Assert
             Assert.IsType<InternalServerErrorResult>(result);
@@ -69,10 +61,9 @@ namespace TestProjectEvent
         public void Delete_ReturnUnauthorized()//401 
         {
             // Arrange
-            var controller = new EventsController();
             var unauthorizedId = 1; // Provide a valid ID here
             // Act
-            var result = controller.Delete(unauthorizedId);
+            var result = _eventsController.Delete(unauthorizedId);
             // Assert
             Assert.IsType<UnauthorizedResult>(result);
         }
