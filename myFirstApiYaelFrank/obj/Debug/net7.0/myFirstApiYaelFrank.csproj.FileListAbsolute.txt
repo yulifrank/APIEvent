@@ -31,3 +31,4 @@ C:\Users\user1\Documents\תכנות שנה ב\דוטנט core\myFirstApiYaelFran
 C:\Users\user1\Documents\תכנות שנה ב\דוטנט core\myFirstApiYaelFrank\myFirstApiYaelFrank\obj\Debug\net7.0\myFirstApiYaelFrank.pdb
 C:\Users\user1\Documents\תכנות שנה ב\דוטנט core\myFirstApiYaelFrank\myFirstApiYaelFrank\obj\Debug\net7.0\myFirstApiYaelFrank.genruntimeconfig.cache
 C:\Users\user1\Documents\תכנות שנה ב\דוטנט core\myFirstApiYaelFrank\myFirstApiYaelFrank\obj\Debug\net7.0\ref\myFirstApiYaelFrank.dll
+C:\Users\user1\Documents\תכנות שנה ב\דוטנט core\myFirstApiYaelFrank\myFirstApiYaelFrank\bin\Debug\net7.0\CsvHelper.dll

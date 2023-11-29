@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "SbZXaaZzYqN1O2kuR8huiXuTMD9d9Wx+Qk29uMwQyczY6cYCsWhap8ee4Agd9lnAVzYpd/LbktDwjMF7vgPhbg==",
+  "dgSpecHash": "BpVqh+xxDAaPZCmANSy2im+hns+/rxKs8OKiAmxNsud/gAP4G+xWpf13eAdL4IYdqof5e6PW6BaHxe8voYfGcA==",
   "success": true,
   "projectFilePath": "C:\\Users\\user1\\Documents\\תכנות שנה ב\\דוטנט core\\myFirstApiYaelFrank\\TestProjectEvent\\TestProjectEvent.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user1\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
+    "C:\\Users\\user1\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
     "C:\\Users\\user1\\.nuget\\packages\\microsoft.aspnet.webapi.client\\6.0.0\\microsoft.aspnet.webapi.client.6.0.0.nupkg.sha512",
     "C:\\Users\\user1\\.nuget\\packages\\microsoft.aspnet.webapi.core\\5.3.0\\microsoft.aspnet.webapi.core.5.3.0.nupkg.sha512",
     "C:\\Users\\user1\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
