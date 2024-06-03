@@ -1,15 +1,15 @@
 # APIEvent
 1. Get_ReturnOk:
-הפונקציה בודקת את פונקציית ה-Get() במחלקה EventsController ומוודאת שהתוצאה שהיא מחזירה היא מסוג OkObjectResult. זאת אומרת שהבדיקה תצליח אם כשנקראה פונקציית ה-Get() תחזיר תשובה מסוג OkObjectResult.
+This function checks the Get() function in the EventsController class and ensures that the result it returns is of type OkObjectResult. This means that the test will pass if when the Get() function is called, it returns an OkObjectResult.
 
 2. GetById_ReturnNotFound:
-הפונקציה בודקת את פונקציית ה-Get(int id) במחלקה EventsController ומוודאת שהתוצאה שהיא מחזירה היא מסוג NotFoundResult. זאת אומרת שהבדיקה תצליח אם כשנקראה פונקציית ה-Get(int id) עם מזהה קיים, היא תחזיר תשובה מסוג NotFoundResult.
+This function checks the Get(int id) function in the EventsController class and ensures that the result it returns is of type NotFoundResult. This means that the test will pass if when the Get(int id) function is called with an existing id, it returns a NotFoundResult.
+
 3. Post_ReturnBadRequest:
-פונקציה זו בודקת את הפונקציה Post() במחלקה EventsController. תחילה הוא יוצר מופע חדש של EventsController ואובייקט invalidEvent, המייצג אירוע לא חוקי. לאחר מכן, הוא קורא לפונקציה Post() עם ה-invalidEvent כארגומנט. לאחר מכן, הפונקציה טוענת שהתוצאה המוחזרת על ידי הפונקציה Post() היא מסוג BadRequestResult. המשמעות היא שהבדיקה תעבור אם הפונקציה Post() תחזיר BadRequestResult.
+This function checks the Post() function in the EventsController class. It first creates a new instance of EventsController and an invalidEvent object, representing an invalid event. Then, it calls the Post() function with the invalidEvent as an argument. After that, the function asserts that the result returned by the Post() function is of type BadRequestResult. This implies that the test will pass if the Post() function returns a BadRequestResult.
 
 4. Put_ReturnInternalServerError:
-פונקציה זו בודקת את הפונקציה Put() במחלקה EventsController. הוא יוצר מופע חדש של EventsController, מגדיר משתנה invalidId (המייצג מזהה לא חוקי) ואובייקט updatedEvent (המייצג אירוע חוקי). לאחר מכן, הפונקציה קוראת לפונקציה Put() עם ה-invalidId ו-updateEvent כארגומנטים. הוא טוען שהתוצאה המוחזרת על ידי הפונקציה Put() היא מסוג InternalServerErrorResult. הבדיקה תעבור אם הפונקציה Put() תחזיר InternalServerErrorResult.
+This function checks the Put() function in the EventsController class. It creates a new instance of EventsController, defines an invalidId variable (representing an invalid id), and an updatedEvent object (representing a valid event). Then, the function calls the Put() function with the invalidId and updatedEvent as arguments. It asserts that the result returned by the Put() function is of type InternalServerErrorResult. The test will pass if the Put() function returns an InternalServerErrorResult.
 
 5. Delete_ReturnUnauthorized:
-פונקציה זו בודקת את הפונקציה Delete() במחלקה EventsController. זה יוצר מופע חדש של EventsController ומגדיר משתנה unauthorizedId (המייצג מזהה חוקי). לאחר מכן, הפונקציה קוראת לפונקציה Delete() עם ה-unauthorizedId כארגומנט. הוא טוען שהתוצאה המוחזרת על ידי הפונקציה Delete() היא מסוג UnauthorizedResult. הבדיקה תעבור אם הפונקציה Delete() תחזיר UnauthorizedResult.
- יוצרת-יעל פרנק
+This function checks the Delete() function in the EventsController class. It creates a new instance of EventsController and defines an unauthorizedId variable (representing a valid id). Then, the function calls the Delete() function with the unauthorizedId as an argument. It asserts that the result returned by the Delete() function is of type UnauthorizedResult. The test will pass if the Delete() function returns an UnauthorizedResult.
