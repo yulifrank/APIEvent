@@ -12,3 +12,4 @@
 
 5. Delete_ReturnUnauthorized:
 פונקציה זו בודקת את הפונקציה Delete() במחלקה EventsController. זה יוצר מופע חדש של EventsController ומגדיר משתנה unauthorizedId (המייצג מזהה חוקי). לאחר מכן, הפונקציה קוראת לפונקציה Delete() עם ה-unauthorizedId כארגומנט. הוא טוען שהתוצאה המוחזרת על ידי הפונקציה Delete() היא מסוג UnauthorizedResult. הבדיקה תעבור אם הפונקציה Delete() תחזיר UnauthorizedResult.
+ יוצרת-יעל פרנק
